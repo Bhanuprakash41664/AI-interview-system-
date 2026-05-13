@@ -682,7 +682,7 @@ export function AIInterviewSession() {
         {/* Right Panel - Candidate */}
         <div className="flex w-1/2 flex-col">
           {/* Candidate Video Preview */}
-          <div className="relative aspect-video bg-card">
+          <div className="relative aspect-video max-h-[300px] overflow-hidden bg-card">
             <video
               ref={videoRef}
               autoPlay
