@@ -84,7 +84,10 @@ export function CandidateDetailsForm() {
       ? selectedSkills.filter((s) => s !== skill)
       : [...selectedSkills, skill];
     setSelectedSkills(newSkills);
-    setValue("skills", newSkills);
+    setValue("skills", newSkills, {
+  shouldValidate: true,
+  shouldDirty: true,
+});
   };
 
   const handleDrop = useCallback((e: React.DragEvent) => {

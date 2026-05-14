@@ -489,6 +489,11 @@ export function AIInterviewSession() {
     }
   }, [session, goToNextQuestion, speakText]);
 
+  const handleGoToCodingRound = useCallback(() => {
+  setStep("coding");
+  router.push("/interview/coding");
+}, [setStep, router]);
+
   const handleEndInterview = () => {
     endSession();
     setStep("summary");
@@ -880,6 +885,14 @@ export function AIInterviewSession() {
                 <SkipForward className="h-4 w-4" />
                 Skip
               </Button>
+
+                <Button
+    onClick={handleGoToCodingRound}
+    className="gap-2 bg-gradient-to-r from-primary to-accent text-white hover:opacity-90"
+  >
+    <ChevronRight className="h-4 w-4" />
+    Coding Round
+  </Button>
             </div>
 
             <Button
